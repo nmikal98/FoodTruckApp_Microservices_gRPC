@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block title %}Truck{% endblock %}
+
+
+{% block content %}
+<script>
+    function increaseCount(a, b) {
+        var input = b.previousElementSibling;
+        var value = parseInt(input.value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        input.value = value;
+    }
+
+    function decreaseCount(a, b) {
+        var input = b.nextElementSibling;
+        var value = parseInt(input.value, 10);
+        if (value > 0) {
+            value = isNaN(value) ? 0 : value;
+            value--;
+            input.value = value;
+        }
+    }
+</script>
+
+
+<h2>Place your order with {{ name }}!</h2>
+
+<div class="orderForm mainCont">
+
+    <form action="{{ url_for('saveOrder') }}" method="post" autocomplete="off">
+
+        <input type="hidden" name="truckname" value="{{ name }}">
+
+        <div class="locations_row">
+            <label class="title" for="location">
+                Select Location:
+            </label>
+            {% for elem in locations %}
+            <input type="radio" name="location" value="{{elem}}"> {{elem}} </input>
+            {% endfor %}
+
+        </div>
+
+        <div class="all_items_row">
+
+            <label class='title' for="menu">
+                Choose Items:
+                <br />
+            </label>
+
+            {% for elem in menu %}
+
+            <div class="row item_row">
+
+                <div class="col-md-3 label_for_counter">
+                    <label for="number-input">
+                        {{elem}}
+                    </label>
+                    <input type="hidden" name="item" value="{{elem}}">
+                </div>
+
+
+                <div class="col-md-3 counter">
+                    <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                    <input type="text" value="0" name="itemQuantity">
+                    <span class="up" onClick='increaseCount(event, this)'>+</span>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <div class="rowButtons">
+            <a class='btnPrimary btncancel' href="{{ url_for('cancel') }}">Cancel</a>
+            <input type="submit" class='btnPrimary'>
+        </div>
+
+    </form>
+
+
+
+
+
+
+
+</div>
+{% endblock %}

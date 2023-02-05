@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block title %}My Orders{% endblock %}
+
+{% block content %}
+<h2>My Orders</h2>
+
+
+{% for elem in data|reverse %}
+
+<div class="orderRow">
+    <p>Order#: {{elem.id}} </p>
+    <p>{{elem.dateofinsert}}</p>
+</div>
+
+<div class="orderBox">
+
+    <div class="row">
+        <div class="col-md-3">
+            <h5>FoodTruck:</h5>
+        </div>
+        <div class="col-md-9">
+            <p> {{elem.truckname}} - {{elem.locations}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h5>Order Details:</h5>
+        </div>
+        <div class="col-md-9">
+            <table class="orderTable">
+                <tr>
+                    <th>Quantity</th>
+                    <th>Item</th>
+                </tr>
+
+
+                {% set list1 = elem.orderDetails.split(',') %}
+                {% for item in list1 %}
+                <tr>
+                    {% set list2 = item.split(':') %}
+                    <td>{{ list2[1] }}</td>
+                    <td>{{ list2[0] }}</td>
+                </tr>
+
+
+
+
+                {% endfor %}
+
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+{% endfor %}
+
+
+
+
+{% endblock %}
