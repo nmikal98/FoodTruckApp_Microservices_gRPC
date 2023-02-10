@@ -60,7 +60,7 @@ def search():
             "msg": "Please provide a query"
         })
     
-    with grpc.insecure_channel("host.docker.internal:9999") as channel:
+    with grpc.insecure_channel("localhost:9999") as channel:
         stub = search_pb2_grpc.searchServiceStub(channel)
 
         
@@ -261,7 +261,7 @@ def placeOrder():
                 "msg": "Please provide a query"
             })
 
-        with grpc.insecure_channel("host.docker.internal:9999") as channel:
+        with grpc.insecure_channel("localhost:9999") as channel:
             stub = search_pb2_grpc.searchServiceStub(channel)
 
             response = stub.SearchStore(search_pb2.searchRequest(req=name))
@@ -321,7 +321,7 @@ def saveOrder():
                     orderDetails = items
 
 
-                with grpc.insecure_channel("host.docker.internal:9999") as channel:
+                with grpc.insecure_channel("localhost:9999") as channel:
                     stub = search_pb2_grpc.searchServiceStub(channel)
                     response = stub.SearchStore(search_pb2.searchRequest(req=truckname))
                     
@@ -331,7 +331,7 @@ def saveOrder():
 
                     date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-                    with grpc.insecure_channel("host.docker.internal:9998") as channel:
+                    with grpc.insecure_channel("localhost:9998") as channel:
                         stub = order_pb2_grpc.orderServiceStub(channel)
                         response = stub.order(order_pb2.orderRequest(sessId=session['id'], truckname=truckname, location=location, orderDetails=orderDetails, date=date))
 
