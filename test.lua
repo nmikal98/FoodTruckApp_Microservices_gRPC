@@ -5,16 +5,12 @@ foodItems = {"burgers", "tacos", "pizza", "sandwich", "water"}
 
 
 
-sessionCoockie = getCookie()
-
-
-
 getCookie = function()
-    headers = {}
-    headers["Content-Type"] = "application/json"
-    body = ''
-    return wrk.format("POST", "/login?username=user&password=1234" , headers, body)
+    return wrk.format("POST", "/loginapi?username=user&password=1234" )
 end
+
+
+sessionCoockie = getCookie()
 
 
 

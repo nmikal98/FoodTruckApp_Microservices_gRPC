@@ -72,6 +72,38 @@ def search():
         return resp
             
 
+@app.route("/loginapi", methods=['POST'])
+def loginapi():
+    username = request.args.get('username')
+    psw = request.args.get('password')
+    password = psw.encode('utf-8')
+
+     # Check if account exists using MySQL
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute(
+            'SELECT * FROM accounts WHERE username = %s ', (username,))
+        # Fetch one record and return result
+    account = cursor.fetchone()
+
+        # If account exists in accounts table in our database
+    if account:
+        storedpsw = account['userPsw'].encode('utf-8')
+            # check if the passeword is correct
+        if bcrypt.checkpw(password, storedpsw):
+                # Create session data, we can access this data in other routes
+            session['loggedin'] = True
+            session['id'] = account['id']
+            session['username'] = account['username']
+                # Redirect to home page
+            return request.cookies.get('session')
+               
+               
+
+                    
+   
+
+
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     # Output message if something goes wrong...
@@ -80,15 +112,10 @@ def login():
     # Check if "username" and "password" POST requests exist (user submitted form)
     if request.method == 'POST': 
 
-        return_template = True
         if 'username' in request.form and 'password' in request.form:
         # Create variables for easy access
             username = request.form['username']
             password = request.form['password'].encode('utf-8')
-        else:
-            username = request.args.get('username')
-            password = request.args.get('password')
-            return_template = False
 
 
         # Check if account exists using MySQL
@@ -109,10 +136,11 @@ def login():
                 session['username'] = account['username']
                 # Redirect to home page
 
-                if return_template:
-                    return redirect(url_for('home'))
-                else:
-                    return request.cookies.get('session')
+                
+                return redirect(url_for('home'))
+               
+
+                    
             else:
                 # Incorrect password
                 msg = 'Incorrect password!'
