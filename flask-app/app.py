@@ -6,7 +6,7 @@ import re
 import bcrypt
 from flask_cors import CORS
 import datetime
-
+import requests
 from google.protobuf.json_format import MessageToDict
 
 import order_pb2
@@ -78,10 +78,18 @@ def login():
     msg = ''
 
     # Check if "username" and "password" POST requests exist (user submitted form)
-    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+    if request.method == 'POST': 
+
+        return_template = True
+        if 'username' in request.form and 'password' in request.form:
         # Create variables for easy access
-        username = request.form['username']
-        password = request.form['password'].encode('utf-8')
+            username = request.form['username']
+            password = request.form['password'].encode('utf-8')
+        else:
+            username = request.args.get('username')
+            password = request.args.get('password')
+            return_template = False
+
 
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
@@ -100,7 +108,11 @@ def login():
                 session['id'] = account['id']
                 session['username'] = account['username']
                 # Redirect to home page
-                return redirect(url_for('home'))
+
+                if return_template:
+                    return redirect(url_for('home'))
+                else:
+                    return request.cookies.get('session')
             else:
                 # Incorrect password
                 msg = 'Incorrect password!'

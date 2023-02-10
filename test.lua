@@ -5,10 +5,16 @@ foodItems = {"burgers", "tacos", "pizza", "sandwich", "water"}
 
 
 
-sessionCoockie = "eyJpZCI6MSwibG9nZ2VkaW4iOnRydWUsInVzZXJuYW1lIjoidXNlciJ9.Y9DeCQ.FCBOime8cS0_RomU8bhOBsWkK1A"
+sessionCoockie = getCookie()
 
 
 
+getCookie = function()
+    headers = {}
+    headers["Content-Type"] = "application/json"
+    body = ''
+    return wrk.format("POST", "/login?username=user&password=1234" , headers, body)
+end
 
 
 
@@ -23,7 +29,7 @@ end
 request2 = function()
     headers = {}
     headers["Content-Type"] = "application/json"
-    headers["Cookie"]="session=eyJpZCI6MSwibG9nZ2VkaW4iOnRydWUsInVzZXJuYW1lIjoidXNlciJ9.Y9DeCQ.FCBOime8cS0_RomU8bhOBsWkK1A"
+    headers["Cookie"]="session=" .. sessionCoockie
     body = ''
     return wrk.format("GET", "/search?q=" .. foodItems[math.random(#foodItems)] , headers, body)
 end
