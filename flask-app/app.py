@@ -72,38 +72,6 @@ def search():
         return resp
             
 
-@app.route("/loginapi", methods=['POST'])
-def loginapi():
-    username = request.args.get('username')
-    psw = request.args.get('password')
-    password = psw.encode('utf-8')
-
-     # Check if account exists using MySQL
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute(
-            'SELECT * FROM accounts WHERE username = %s ', (username,))
-        # Fetch one record and return result
-    account = cursor.fetchone()
-
-        # If account exists in accounts table in our database
-    if account:
-        storedpsw = account['userPsw'].encode('utf-8')
-            # check if the passeword is correct
-        if bcrypt.checkpw(password, storedpsw):
-                # Create session data, we can access this data in other routes
-            session['loggedin'] = True
-            session['id'] = account['id']
-            session['username'] = account['username']
-                # Redirect to home page
-            return request.cookies.get('session')
-               
-               
-
-                    
-   
-
-
-
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     # Output message if something goes wrong...

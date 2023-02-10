@@ -5,16 +5,12 @@ foodItems = {"burgers", "tacos", "pizza", "sandwich", "water"}
 
 
 
-getCookie = function()
-    return wrk.format("POST", "/loginapi?username=user&password=1234" )
-end
 
 
-sessionCoockie = getCookie()
-
-
+    sessionCoockie = 'eyJpZCI6MSwibG9nZ2VkaW4iOnRydWUsInVzZXJuYW1lIjoidXNlciJ9.Y-Y99g.cDSOu8AP7nB94pckVs5FpqPJelo'
 
 request1 = function()
+
     headers = {}
     headers["Content-Type"] = "application/json"
     headers["Cookie"]="session=" .. sessionCoockie
@@ -25,7 +21,6 @@ end
 request2 = function()
     headers = {}
     headers["Content-Type"] = "application/json"
-    headers["Cookie"]="session=" .. sessionCoockie
     body = ''
     return wrk.format("GET", "/search?q=" .. foodItems[math.random(#foodItems)] , headers, body)
 end
