@@ -31,5 +31,9 @@ CREATE TABLE IF NOT EXISTS orders (
 
 ) DEFAULT CHARSET=utf8;
 
+LOCK TABLES `accounts` WRITE;
+INSERT INTO `accounts` VALUES 
+(1, 'user', '$2b$12$YrFlS6/VJ3Unojf/hnBi1eKQk1jr1VpzE2/ak016.wl3JdUAfq9zS', 'mail@email.com', '99000000', 'address' );
+UNLOCK TABLES;
 
 

@@ -1,0 +1,23 @@
+//python -m grpc_tools.protoc -I./proto --python_out=. --grpc_python_out=. ./proto/order.proto
+
+syntax = "proto3";
+
+service orderService {
+
+    rpc order (orderRequest) returns (orderResponse) {}
+
+}
+
+message orderRequest {
+ 
+    int64 sessId = 1;
+    string truckname = 2;
+    string location = 3;
+    string orderDetails = 4;
+    string date = 5;
+
+}
+
+message orderResponse {
+    string status = 1;
+}

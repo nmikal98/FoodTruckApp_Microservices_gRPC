@@ -1,25 +1,21 @@
-from audioop import add
-import logging
-from elasticsearch import Elasticsearch, exceptions
 import os
-import time
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify, after_this_request
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
 import bcrypt
-import sys
-import requests
-import json
 from flask_cors import CORS
-from extract import json_extract
-import os
-import re
 import datetime
 
-#es = Elasticsearch("http://localhost:9200")
+from google.protobuf.json_format import MessageToDict
 
-es = Elasticsearch(host='es')
+import order_pb2
+import order_pb2_grpc 
+import search_pb2
+import search_pb2_grpc
+import grpc
+
+#es = Elasticsearch(host='es')
 
 app = Flask(__name__)
 CORS(app)
@@ -28,7 +24,7 @@ CORS(app)
 app.secret_key = 'SBKx2OPukLUp3xZ0kF2og3hcGv2Jyuth'
 
 # Enter your database connection details below
-app.config['MYSQL_HOST'] = 'mydb'
+app.config['MYSQL_HOST'] = 'mydb_micro'
 #app.config['MYSQL_HOST'] = 'host.docker.internal'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'Aa123456!'
@@ -38,46 +34,8 @@ app.config['MYSQL_DB'] = 'foodtruckdb'
 mysql = MySQL(app)
 
 
-################################################
-# ElasticSearch Functions
-################################################
 
 
-def load_data_in_es():
-    """ creates an index in elasticsearch """
-    url = "http://data.sfgov.org/resource/rqzj-sfat.json"
-    r = requests.get(url)
-    data = r.json()
-    print("Loading data in elasticsearch ...")
-    for id, truck in enumerate(data):
-        res = es.index(index="sfdata", id=id, document=truck)
-    print("Total trucks loaded: ", len(data))
-
-
-def safe_check_index(index, retry=3):
-    """ connect to ES with retry """
-    if not retry:
-        print("Out of retries. Bailing out...")
-        sys.exit(1)
-    try:
-        status = es.indices.exists(index=index)
-        return status
-    except exceptions.ConnectionError as e:
-        print("Unable to connect to ES. Retrying in 5 secs...")
-        time.sleep(5)
-        safe_check_index(index, retry-1)
-
-
-def format_fooditems(string):
-    items = [x.strip().lower() for x in string.split(":")]
-    return items[1:] if items[0].find("cold truck") > -1 else items
-
-
-def check_and_load_index():
-    """ checks if index exits and loads the data accordingly """
-    if not safe_check_index('sfdata'):
-        print("Index not found...")
-        load_data_in_es()
 
 ################################################
 # APP
@@ -92,128 +50,27 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/debug')
-def test_es():
-    resp = {}
-    try:
-        msg = es.cat.indices()
-        resp["msg"] = msg
-        resp["status"] = "success"
-    except:
-        resp["status"] = "failure"
-        resp["msg"] = "Unable to reach ES"
-    return jsonify(resp)
-
-
 @app.route('/search')
 def search():
     key = request.args.get('q')
+
     if not key:
         return jsonify({
             "status": "failure",
             "msg": "Please provide a query"
         })
-    try:
-        res = es.search(
-            index="sfdata",
-            body={
-                "query": {"match": {"fooditems": key}},
-                "size": 750  # max document size
-            })
-    except Exception as e:
-        return jsonify({
-            "status": "failure",
-            "msg": "error in reaching elasticsearch"
-        })
-    # filtering results
-    vendors = set([x["_source"]["applicant"] for x in res["hits"]["hits"]])
-    temp = {v: [] for v in vendors}
-    fooditems = {v: "" for v in vendors}
-    for r in res["hits"]["hits"]:
-        applicant = r["_source"]["applicant"]
-        if "location" in r["_source"]:
-            truck = {
-                "hours": r["_source"].get("dayshours", "NA"),
-                "schedule": r["_source"].get("schedule", "NA"),
-                "address": r["_source"].get("address", "NA"),
-                "location": r["_source"]["location"]
-            }
-            fooditems[applicant] = r["_source"]["fooditems"]
-            temp[applicant].append(truck)
+    
+    with grpc.insecure_channel("host.docker.internal:9999") as channel:
+        stub = search_pb2_grpc.searchServiceStub(channel)
 
-    # building up results
-    results = {"trucks": []}
-    for v in temp:
-        results["trucks"].append({
-            "name": v,
-            "fooditems": format_fooditems(fooditems[v]),
-            "branches": temp[v],
-            "drinks": fooditems[v].find("COLD TRUCK") > -1
-        })
-    hits = len(results["trucks"])
-    locations = sum([len(r["branches"]) for r in results["trucks"]])
+        
+        response = stub.Search(search_pb2.searchRequest(req=key))
+        
+        resp = jsonify(MessageToDict(response))
+     
 
-    return jsonify({
-        "trucks": results["trucks"],
-        "hits": hits,
-        "locations": locations,
-        "status": "success"
-    })
-
-
-@app.route('/searchstore')
-def searchstore():
-    key = request.args.get('q')
-    if not key:
-        return jsonify({
-            "status": "failure",
-            "msg": "Please provide a query"
-        })
-    try:
-        res = es.search(
-            index="sfdata",
-            body={
-                "query": {"match_phrase": {"applicant": key}},
-                "size": 750  # max document size
-            }
-        )
-    except Exception as e:
-        return jsonify({
-            "status": "failure",
-            "msg": "error in reaching elasticsearch"
-        })
-    # filtering results
-    vendors = set([x["_source"]["applicant"] for x in res["hits"]["hits"]])
-    temp = {v: [] for v in vendors}
-    fooditems = {v: "" for v in vendors}
-    for r in res["hits"]["hits"]:
-        applicant = r["_source"]["applicant"]
-        if "location" in r["_source"]:
-            truck = {
-
-                "address": r["_source"].get("address", "NA")
-            }
-            fooditems[applicant] = r["_source"]["fooditems"]
-            temp[applicant].append(truck)
-
-    # building up results
-    results = {"trucks": []}
-    for v in temp:
-        results["trucks"].append({
-            "name": v,
-            "fooditems": format_fooditems(fooditems[v]),
-            "branches": temp[v],
-            "drinks": fooditems[v].find("COLD TRUCK") > -1
-        })
-    hits = len(results["trucks"])
-    locations = sum([len(r["branches"]) for r in results["trucks"]])
-
-    return jsonify({
-        "trucks": results["trucks"]
-    })
-
-# http://localhost:5000/login - the following will be our login page, which will use both GET and POST requests
-
+        return resp
+            
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -254,7 +111,6 @@ def login():
     return render_template('login.html', msg='')
 
 
-# http://localhost:5000/logout - this will be the logout page
 @app.route('/logout')
 def logout():
     # Remove session data, this will log the user out
@@ -265,7 +121,6 @@ def logout():
     return redirect(url_for('index'))
 
 
-# http://localhost:5000/register - this will be the registration page, we need to use both GET and POST requests
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     # Output message if something goes wrong...
@@ -308,7 +163,6 @@ def register():
     return render_template('register.html', msg=msg)
 
 
-# http://localhost:5000/home - this will be the home page, only accessible for loggedin users
 @app.route('/home')
 def home():
     # Check if user is loggedin
@@ -319,7 +173,6 @@ def home():
     return redirect(url_for('login'))
 
 
-# http://localhost:5000/profile - this will be the profile page, only accessible for loggedin users
 @app.route('/profile')
 def profile():
     # Check if user is loggedin
@@ -352,28 +205,6 @@ def myOrders():
     return redirect(url_for('login'))
 
 
-# @app.route('/truck/saveinfo', methods=['GET', 'POST'])
-# def truckinfo():
-
-#     if request.method == 'POST':
-
-#         data = request.get_json()
-
-#         name = json_extract(data, 'name')
-#         slocations = ','.join(json_extract(data, 'address'))
-#         smenu = ','.join(data['data']['fooditems'])
-
-#         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-#         cursor.execute('SELECT * FROM foodtruck WHERE truckname = %s', (name))
-
-#         if (cursor.rowcount == 0):
-#             cursor.execute(
-#                 'INSERT INTO foodtruck VALUES (NULL, %s, %s, %s)', (name, slocations, smenu))
-#             mysql.connection.commit()
-
-#         return '', 200
-
-
 @app.route('/placeOrder', methods=['GET', 'POST'])
 def placeOrder():
 
@@ -390,28 +221,20 @@ def placeOrder():
                 "msg": "Please provide a query"
             })
 
-        res = requests.get('http://localhost:5000/searchstore?q="'+name+'"')
-        truck_data = res.json()
+        with grpc.insecure_channel("host.docker.internal:9999") as channel:
+            stub = search_pb2_grpc.searchServiceStub(channel)
+
+            response = stub.SearchStore(search_pb2.searchRequest(req=name))
+            
+        truck_data = MessageToDict(response)
+
 
         locations = []
 
         for item in truck_data['trucks'][0]['branches']:
-            for attr, val in item.items():
-                locations.append(val)
+            locations.append(item['address'])
 
         menu = truck_data['trucks'][0]['fooditems']
-
-        # response = requests.request(
-        #     method="POST", url='/searchstore', data=name)
-
-        # print(response)
-    #     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    #     cursor.execute(
-    #         'SELECT * FROM foodtruck WHERE truckname = %s', [name])
-    #     truck = cursor.fetchone()
-
-    #     locations = re.split('[,&]', truck['locations'])
-    #     menu = re.split('[,&]', truck['menu'])
 
         return render_template('order.html', name=name, locations=locations, menu=menu)
     # User is not loggedin redirect to login page
@@ -457,20 +280,21 @@ def saveOrder():
                     location = loc
                     orderDetails = items
 
-                res = requests.get(
-                    'http://localhost:5000/searchstore?q="'+truckname+'"')
-                truck_data = res.json()
+
+                with grpc.insecure_channel("host.docker.internal:9999") as channel:
+                    stub = search_pb2_grpc.searchServiceStub(channel)
+                    response = stub.SearchStore(search_pb2.searchRequest(req=truckname))
+                    
+                truck_data = MessageToDict(response)
 
                 if truck_data['trucks'] != []:
 
                     date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-                    cursor = mysql.connection.cursor(
-                        MySQLdb.cursors.DictCursor)
+                    with grpc.insecure_channel("host.docker.internal:9998") as channel:
+                        stub = order_pb2_grpc.orderServiceStub(channel)
+                        response = stub.order(order_pb2.orderRequest(sessId=session['id'], truckname=truckname, location=location, orderDetails=orderDetails, date=date))
 
-                    cursor.execute(
-                        'INSERT INTO orders VALUES (NULL, %s, %s, %s,%s, %s)', (session['id'], truckname, location, orderDetails, date))
-                    mysql.connection.commit()
                 else:
                     print("Foodtruck not found")
                     redirect(url_for('home'))
@@ -485,7 +309,7 @@ def saveOrder():
     return redirect(url_for('login'))
 
 
+
 if __name__ == '__main__':
     ENVIRONMENT_DEBUG = os.environ.get("DEBUG", False)
-    check_and_load_index()
     app.run(host='0.0.0.0', port=5000, debug=ENVIRONMENT_DEBUG)

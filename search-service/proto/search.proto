@@ -1,0 +1,54 @@
+//python -m grpc_tools.protoc -I./proto --python_out=. --grpc_python_out=. ./proto/search.proto
+
+syntax = "proto3";
+
+service searchService {
+
+    rpc Search (searchRequest) returns (searchResponse) {}
+
+    rpc SearchStore (searchRequest) returns (searchStoreResponse) {}
+
+}
+
+message searchRequest {
+    string req = 1;
+}
+
+message searchResponse {
+    repeated Trucks trucks = 1;
+    int32 hits = 2;
+    int32 locations = 3;
+    string status = 4;
+
+}
+
+message searchStoreResponse {
+    repeated Trucks trucks = 1;
+}
+
+message Trucks {
+    string name = 1;
+    repeated string fooditems = 2;
+    repeated Branches branches = 3;
+    bool drinks = 4;
+}
+
+message Branches {
+    string hours = 1;
+    string schedule = 2;
+    string address = 3;
+    Location location = 4;
+}
+
+message Location {
+    string longitude = 1;
+    string latitude = 2;
+    string human_address = 3;
+}
+
+message HumanAddress {
+    string address = 1;
+    string city = 2;
+    string state = 3;
+    string zip = 4;
+}

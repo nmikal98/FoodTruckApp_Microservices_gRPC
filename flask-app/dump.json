@@ -1,0 +1,1055 @@
+{
+  "trucks": [
+    {
+      "name": "Pipo's Grill",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "hot dogs",
+        "and hamburgers"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=16MFF-0010&ExportPDF=1&Filename=16MFF-0010_schedule.pdf",
+          "address": "1800 FOLSOM ST",
+          "location": {
+            "longitude": "-122.41610489253189",
+            "latitude": "37.76785244271805",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Taqueria Lolita",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "quesadillas",
+        "combination plates",
+        "tortas",
+        "tostadas"
+      ],
+      "branches": [
+        {
+          "hours": "Th/Fr/Sa:7AM-3PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=16MFF-0128&ExportPDF=1&Filename=16MFF-0128_schedule.pdf",
+          "address": "1700 EVANS AVE",
+          "location": {
+            "longitude": "-122.39097197693538",
+            "latitude": "37.744889286143",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "Mo-We:7AM-3PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=16MFF-0128&ExportPDF=1&Filename=16MFF-0128_schedule.pdf",
+          "address": "750 PHELPS ST",
+          "location": {
+            "longitude": "-122.39301498669842",
+            "latitude": "37.73944545286909",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Truly Food & More",
+      "fooditems": [
+        "latin food",
+        "tacos",
+        "pupusas",
+        "vegetables",
+        "salad",
+        "waters",
+        "sodas"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00093&ExportPDF=1&Filename=22MFF-00093_schedule.pdf",
+          "address": "217 SANSOME ST",
+          "location": {
+            "longitude": "-122.40126969523558",
+            "latitude": "37.79238986198323",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=21MFF-00151&ExportPDF=1&Filename=21MFF-00151_schedule.pdf",
+          "address": "1500 GENEVA AVE",
+          "location": {
+            "longitude": "-122.43164419037294",
+            "latitude": "37.712302604744416",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00093&ExportPDF=1&Filename=22MFF-00093_schedule.pdf",
+          "address": "602 MISSION ST",
+          "location": {
+            "longitude": "-122.40018504988889",
+            "latitude": "37.78797328321604",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00093&ExportPDF=1&Filename=22MFF-00093_schedule.pdf",
+          "address": "505 HOWARD ST",
+          "location": {
+            "longitude": "-122.39610066847152",
+            "latitude": "37.78798864899528",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tacos Rodriguez",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "quesadillas",
+        "soda & water"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00024&ExportPDF=1&Filename=22MFF-00024_schedule.pdf",
+          "address": "1275 EVANS AVE",
+          "location": {
+            "longitude": "-122.38246497113636",
+            "latitude": "37.73911142974502",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00024&ExportPDF=1&Filename=22MFF-00024_schedule.pdf",
+          "address": "1 SANSOME ST",
+          "location": {
+            "longitude": "-122.40094044068951",
+            "latitude": "37.790485146128",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00024&ExportPDF=1&Filename=22MFF-00024_schedule.pdf",
+          "address": "2198 OAKDALE AVE",
+          "location": {
+            "longitude": "-122.4011723353864",
+            "latitude": "37.74099473500238",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00024&ExportPDF=1&Filename=22MFF-00024_schedule.pdf",
+          "address": "600 MENDELL ST",
+          "location": {
+            "longitude": "-122.38649338455488",
+            "latitude": "37.73967879180792",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "El Alambre",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "quesadillas",
+        "nachos alambres",
+        "choice of meat",
+        "carne asada",
+        "carnitas",
+        "pollo",
+        "al pastor camarones"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00094&ExportPDF=1&Filename=22MFF-00094_schedule.pdf",
+          "address": "1800 FOLSOM ST",
+          "location": {
+            "longitude": "-122.41610489253189",
+            "latitude": "37.76785244271805",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00094&ExportPDF=1&Filename=22MFF-00094_schedule.pdf",
+          "address": "1800 FOLSOM ST",
+          "location": {
+            "longitude": "-122.41610489253189",
+            "latitude": "37.76785244271805",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00095&ExportPDF=1&Filename=22MFF-00095_schedule.pdf",
+          "address": "1188 FRANKLIN ST",
+          "location": {
+            "longitude": "-122.42260358516438",
+            "latitude": "37.785271949066775",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00095&ExportPDF=1&Filename=22MFF-00095_schedule.pdf",
+          "address": "1100 FRANKLIN ST",
+          "location": {
+            "longitude": "-122.42256813313709",
+            "latitude": "37.78484602775554",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tacos Lol-Tun",
+      "fooditems": [
+        "tortas",
+        "burritos",
+        "tacos",
+        "ensaladas",
+        "sodas"
+      ],
+      "branches": [
+        {
+          "hours": "Mo/We/Fr:7AM-4PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=18MFF-0101&ExportPDF=1&Filename=18MFF-0101_schedule.pdf",
+          "address": "1610 ARMSTRONG AVE",
+          "location": {
+            "longitude": "-122.39235562563125",
+            "latitude": "37.726594363386816",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Esmeli Catering",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "quesadilla",
+        "tortas sodas"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=19MFF-00110&ExportPDF=1&Filename=19MFF-00110_schedule.pdf",
+          "address": "Assessors Block /Lot",
+          "location": {
+            "longitude": "0.0",
+            "latitude": "0.0",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "El Gallo Jiro",
+      "fooditems": [
+        "burritos",
+        "giros",
+        "tortas",
+        "quesadillas",
+        "tacos & various beverages"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=21MFF-00011&ExportPDF=1&Filename=21MFF-00011_schedule.pdf",
+          "address": "3055 23RD ST",
+          "location": {
+            "longitude": "-122.41332312961758",
+            "latitude": "37.753927735726535",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Buenafe",
+      "fooditems": [
+        "tacos burritos quesadillas tortas pupusas flautas tamales"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00084&ExportPDF=1&Filename=22MFF-00084_schedule.pdf",
+          "address": "220 RANKIN ST",
+          "location": {
+            "longitude": "-122.3924814876784",
+            "latitude": "37.74574924062031",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00084&ExportPDF=1&Filename=22MFF-00084_schedule.pdf",
+          "address": "750 PHELPS ST",
+          "location": {
+            "longitude": "-122.39301498669842",
+            "latitude": "37.73944545286909",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00085&ExportPDF=1&Filename=22MFF-00085_schedule.pdf",
+          "address": "901 16TH ST",
+          "location": {
+            "longitude": "-122.39547306227007",
+            "latitude": "37.76612469442701",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Plaza Garibaldy",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "quesadillas"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00057&ExportPDF=1&Filename=22MFF-00057_schedule.pdf",
+          "address": "540 HOWARD ST",
+          "location": {
+            "longitude": "-122.39723654373122",
+            "latitude": "37.78795495968584",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00058&ExportPDF=1&Filename=22MFF-00058_schedule.pdf",
+          "address": "475 CALIFORNIA ST",
+          "location": {
+            "longitude": "-122.40238532279395",
+            "latitude": "37.792346385148",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00057&ExportPDF=1&Filename=22MFF-00057_schedule.pdf",
+          "address": "1 MONTGOMERY ST",
+          "location": {
+            "longitude": "-122.40241859729358",
+            "latitude": "37.78924953407508",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tacos El Ojo De Agua",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "tortas",
+        "quesadillas",
+        "salads",
+        "soup",
+        "fruits",
+        "juices",
+        "soda",
+        "water"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=19MFF-00046&ExportPDF=1&Filename=19MFF-00046_schedule.pdf",
+          "address": "551 03RD ST",
+          "location": {
+            "longitude": "-122.39462918166163",
+            "latitude": "37.780647210048365",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tacos Santo Toribio",
+      "fooditems": [
+        "tacos"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=17MFF-0171&ExportPDF=1&Filename=17MFF-0171_schedule.pdf",
+          "address": "928 TOLAND ST",
+          "location": {
+            "longitude": "-122.4015472063967",
+            "latitude": "37.74162368623527",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tacos El Primo",
+      "fooditems": [
+        "mexican food",
+        "tacos",
+        "burritos",
+        "tortas",
+        "various meat and chicken and fish plate",
+        "chile relleno plate",
+        "fish plate",
+        "bread",
+        "flan",
+        "rice pudding",
+        "bread",
+        "fruit juice",
+        "vegetable juice",
+        "coffee",
+        "tea"
+      ],
+      "branches": [
+        {
+          "hours": "Mo-Fr:10AM-4PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=18MFF-0006&ExportPDF=1&Filename=18MFF-0006_schedule.pdf",
+          "address": "1700 EVANS AVE",
+          "location": {
+            "longitude": "-122.39097197693538",
+            "latitude": "37.744889286143",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "Tu/Sa:8AM-3PM;Mo/Tu/We/Th/Fr:10AM-2PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=18MFF-0006&ExportPDF=1&Filename=18MFF-0006_schedule.pdf",
+          "address": "1495 WALLACE AVE",
+          "location": {
+            "longitude": "-122.38921555942115",
+            "latitude": "37.72593049503994",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "Su:8AM-10PM;Mo/Tu/We/Th/Fr:4PM-10PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=18MFF-0006&ExportPDF=1&Filename=18MFF-0006_schedule.pdf",
+          "address": "345 WILLIAMS AVE",
+          "location": {
+            "longitude": "-122.39924710472444",
+            "latitude": "37.72980548057414",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "La Jefa",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "quesadillas",
+        "tortas",
+        "nachos (refried beans",
+        "cheese sauce",
+        "salsa fresca)",
+        "carnes (beef",
+        "chicken",
+        "marinated pork",
+        "fried pork)",
+        "canned beans",
+        "rice",
+        "sodas",
+        "horchata drinks."
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00061&ExportPDF=1&Filename=22MFF-00061_schedule.pdf",
+          "address": "531 BAY SHORE BLVD",
+          "location": {
+            "longitude": "-122.40673602990493",
+            "latitude": "37.738726803987134",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "El Tonayense #60",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "tortas",
+        "quesadillas",
+        "drinks"
+      ],
+      "branches": [
+        {
+          "hours": "Mo-Su:10AM-4PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=18MFF-0004&ExportPDF=1&Filename=18MFF-0004_schedule.pdf",
+          "address": "401 TREAT AVE",
+          "location": {
+            "longitude": "-122.41345489002224",
+            "latitude": "37.763108325376656",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "Mo-Su:4PM-10PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=18MFF-0004&ExportPDF=1&Filename=18MFF-0004_schedule.pdf",
+          "address": "2355 FOLSOM ST",
+          "location": {
+            "longitude": "0.0",
+            "latitude": "0.0",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Eva's Catering",
+      "fooditems": [
+        "burrito",
+        "corn dog",
+        "salads",
+        "sandwiches",
+        "quesadilla",
+        "tacos",
+        "fried rice",
+        "cow mein",
+        "chinese rice",
+        "noodle plates",
+        "soup",
+        "bacon",
+        "eggs",
+        "ham",
+        "avacado",
+        "sausages",
+        "beverages"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00076&ExportPDF=1&Filename=22MFF-00076_schedule.pdf",
+          "address": "1650 20TH AVE",
+          "location": {
+            "longitude": "-122.43346578040662",
+            "latitude": "37.75798419052856",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00076&ExportPDF=1&Filename=22MFF-00076_schedule.pdf",
+          "address": "1100 ORTEGA ST",
+          "location": {
+            "longitude": "-122.47547353178139",
+            "latitude": "37.752660520412284",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00076&ExportPDF=1&Filename=22MFF-00076_schedule.pdf",
+          "address": "630 BRANNAN ST",
+          "location": {
+            "longitude": "-122.40028723986815",
+            "latitude": "37.77609875315735",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00076&ExportPDF=1&Filename=22MFF-00076_schedule.pdf",
+          "address": "1199 ORTEGA ST",
+          "location": {
+            "longitude": "-122.49007120809986",
+            "latitude": "37.78350912221273",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00076&ExportPDF=1&Filename=22MFF-00076_schedule.pdf",
+          "address": "2045 EVANS AVE",
+          "location": {
+            "longitude": "-122.39703171897757",
+            "latitude": "37.747772091607466",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00076&ExportPDF=1&Filename=22MFF-00076_schedule.pdf",
+          "address": "530 05TH ST",
+          "location": {
+            "longitude": "-122.40025957520209",
+            "latitude": "37.77687638877653",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00076&ExportPDF=1&Filename=22MFF-00076_schedule.pdf",
+          "address": "1900 19TH AVE",
+          "location": {
+            "longitude": "-122.47587232222202",
+            "latitude": "37.75212416311866",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "San Francisco Taco Truck",
+      "fooditems": [
+        "tacos",
+        "tortas",
+        "burritos"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00030&ExportPDF=1&Filename=22MFF-00030_schedule.pdf",
+          "address": "345 WILLIAMS AVE",
+          "location": {
+            "longitude": "-122.39924710472444",
+            "latitude": "37.72980548057414",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00030&ExportPDF=1&Filename=22MFF-00030_schedule.pdf",
+          "address": "345 WILLIAMS AVE",
+          "location": {
+            "longitude": "-122.39924710472444",
+            "latitude": "37.72980548057414",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Santana ESG, Inc.",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "tortas",
+        "quesadillas",
+        "mexican drinks",
+        "aguas frescas"
+      ],
+      "branches": [
+        {
+          "hours": "Sa-Su:10AM-6PM;Mo-Fr:10AM-10PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=17MFF-0169&ExportPDF=1&Filename=17MFF-0169_schedule.pdf",
+          "address": "200 SHOTWELL ST",
+          "location": {
+            "longitude": "-122.41656213947006",
+            "latitude": "37.764745350719494",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "Mo-Fr:11AM-3PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=17MFF-0122&ExportPDF=1&Filename=17MFF-0122_schedule.pdf",
+          "address": "1 SANSOME ST",
+          "location": {
+            "longitude": "-122.40094044068951",
+            "latitude": "37.790485146128",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "Mo-Su:9AM-10PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=17MFF-0164&ExportPDF=1&Filename=17MFF-0164_schedule.pdf",
+          "address": "2598 HARRISON ST",
+          "location": {
+            "longitude": "0.0",
+            "latitude": "0.0",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Giant Burrito",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "tostadas",
+        "flautas",
+        "tostadas",
+        "tortas",
+        "pozole menudo"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=19MFF-00088&ExportPDF=1&Filename=19MFF-00088_schedule.pdf",
+          "address": "1500 GENEVA AVE",
+          "location": {
+            "longitude": "-122.43164419037294",
+            "latitude": "37.712302604744416",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=19MFF-00088&ExportPDF=1&Filename=19MFF-00088_schedule.pdf",
+          "address": "353 BAY SHORE BLVD",
+          "location": {
+            "longitude": "-122.40541797744821",
+            "latitude": "37.74171783074393",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SF Street Food",
+      "fooditems": [
+        "chicken tikka masala",
+        "vegetarian rice plate",
+        "burritos",
+        "tacos",
+        "mango lassi"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=16MFF-0126&ExportPDF=1&Filename=16MFF-0126_schedule.pdf",
+          "address": "290 SUTTER ST",
+          "location": {
+            "longitude": "-122.40523289252366",
+            "latitude": "37.78991386713444",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=16MFF-0126&ExportPDF=1&Filename=16MFF-0126_schedule.pdf",
+          "address": "667 MISSION ST",
+          "location": {
+            "longitude": "-122.40103337534973",
+            "latitude": "37.7865580501799",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bay Area Mobile Catering, Inc. dba. Taqueria Angelica's",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "soda & juice"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00075&ExportPDF=1&Filename=22MFF-00075_schedule.pdf",
+          "address": "1501 FOLSOM ST",
+          "location": {
+            "longitude": "-122.41400704302406",
+            "latitude": "37.771586702670334",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00075&ExportPDF=1&Filename=22MFF-00075_schedule.pdf",
+          "address": "3065 25TH ST",
+          "location": {
+            "longitude": "-122.4114199662057",
+            "latitude": "37.7509316476402",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00074&ExportPDF=1&Filename=22MFF-00074_schedule.pdf",
+          "address": "1301 CESAR CHAVEZ ST",
+          "location": {
+            "longitude": "-122.39097537957679",
+            "latitude": "37.74925585952909",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00075&ExportPDF=1&Filename=22MFF-00075_schedule.pdf",
+          "address": "1455 MARKET ST",
+          "location": {
+            "longitude": "-122.41746613186956",
+            "latitude": "37.77522830783405",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "El Tonayanse #4 / #36",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "tortas",
+        "quesadillas"
+      ],
+      "branches": [
+        {
+          "hours": "Mo-Su:10AM-7PM",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=18MFF-0005&ExportPDF=1&Filename=18MFF-0005_schedule.pdf",
+          "address": "1717 HARRISON ST",
+          "location": {
+            "longitude": "0.0",
+            "latitude": "0.0",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Street Meet",
+      "fooditems": [
+        "burritos",
+        "tacos",
+        "quesadillas",
+        "tortas",
+        "carne asada fries and various drinks"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00010&ExportPDF=1&Filename=22MFF-00010_schedule.pdf",
+          "address": "777 MARIPOSA ST",
+          "location": {
+            "longitude": "-122.3912653505994",
+            "latitude": "37.76381127729062",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=20MFF-00007&ExportPDF=1&Filename=20MFF-00007_schedule.pdf",
+          "address": "564 HOWARD ST",
+          "location": {
+            "longitude": "-122.39772670915164",
+            "latitude": "37.787539893467496",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00033&ExportPDF=1&Filename=22MFF-00033_schedule.pdf",
+          "address": "306 VALENCIA ST",
+          "location": {
+            "longitude": "-122.42248440416165",
+            "latitude": "37.767855269354264",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00009&ExportPDF=1&Filename=22MFF-00009_schedule.pdf",
+          "address": "30 GROVE ST",
+          "location": {
+            "longitude": "-122.4158078824267",
+            "latitude": "37.779159119969",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00009&ExportPDF=1&Filename=22MFF-00009_schedule.pdf",
+          "address": "100 LARKIN ST",
+          "location": {
+            "longitude": "-122.4158078824267",
+            "latitude": "37.779159119969",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Senor Sisig",
+      "fooditems": [
+        "senor sisig",
+        "filipino fusion food",
+        "tacos",
+        "burritos",
+        "nachos",
+        "rice plates. various beverages.chairman bao",
+        "vegetable and meat sandwiches filled with asian-flavored meats and vegetables."
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00043&ExportPDF=1&Filename=22MFF-00043_schedule.pdf",
+          "address": "101 CALIFORNIA ST",
+          "location": {
+            "longitude": "-122.39809861316652",
+            "latitude": "37.792948952834664",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00053&ExportPDF=1&Filename=22MFF-00053_schedule.pdf",
+          "address": "300 PINE ST",
+          "location": {
+            "longitude": "0.0",
+            "latitude": "0.0",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00043&ExportPDF=1&Filename=22MFF-00043_schedule.pdf",
+          "address": "901 MISSION ST",
+          "location": {
+            "longitude": "-122.40660110683912",
+            "latitude": "37.78215364099855",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00046&ExportPDF=1&Filename=22MFF-00046_schedule.pdf",
+          "address": "8 10TH ST",
+          "location": {
+            "longitude": "-122.41724962664345",
+            "latitude": "37.7758255197583",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00046&ExportPDF=1&Filename=22MFF-00046_schedule.pdf",
+          "address": "90 BROADWAY",
+          "location": {
+            "longitude": "-122.39961794865545",
+            "latitude": "37.799260113502285",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "San Pancho's Tacos",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "quesadillas",
+        "tortas",
+        "nachos",
+        "hot dogs",
+        "soda",
+        "water",
+        "fruit drinks"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00049&ExportPDF=1&Filename=22MFF-00049_schedule.pdf",
+          "address": "3119 ALEMANY BLVD",
+          "location": {
+            "longitude": "-122.4552219061259",
+            "latitude": "37.71019301997575",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00049&ExportPDF=1&Filename=22MFF-00049_schedule.pdf",
+          "address": "1271 CAPITOL AVE",
+          "location": {
+            "longitude": "-122.45937730954839",
+            "latitude": "37.724297778527635",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00049&ExportPDF=1&Filename=22MFF-00049_schedule.pdf",
+          "address": "491 BAY SHORE BLVD",
+          "location": {
+            "longitude": "0.0",
+            "latitude": "0.0",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tacos El Flaco",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "tortas",
+        "quesadillas",
+        "chips & salsa & various beverages"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00032&ExportPDF=1&Filename=22MFF-00032_schedule.pdf",
+          "address": "2901 03RD ST",
+          "location": {
+            "longitude": "-122.38700019629786",
+            "latitude": "37.75240499247832",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CARDONA'S FOOD TRUCK",
+      "fooditems": [
+        "tacos",
+        "burritos",
+        "quesadillas",
+        "various drinks"
+      ],
+      "branches": [
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00060&ExportPDF=1&Filename=22MFF-00060_schedule.pdf",
+          "address": "1888 MISSION ST",
+          "location": {
+            "longitude": "-122.42032247306807",
+            "latitude": "37.766897602559155",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        },
+        {
+          "hours": "NA",
+          "schedule": "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=22MFF-00060&ExportPDF=1&Filename=22MFF-00060_schedule.pdf",
+          "address": "1800 MISSION ST",
+          "location": {
+            "longitude": "-122.42057533514163",
+            "latitude": "37.767817181414145",
+            "humanAddress": "{\"address\": \"\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+          }
+        }
+      ]
+    }
+  ],
+  "hits": 27,
+  "locations": 69,
+  "status": "success"
+}

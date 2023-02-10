@@ -1,8 +1,8 @@
-version: '2.2'
+version: "2.2"
 services:
-  es:
+  es_micro:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
-    container_name: es
+    container_name: es_micro
     environment:
       - discovery.type=single-node
     ports:
@@ -10,38 +10,61 @@ services:
     volumes:
       - esdata1:/usr/share/elasticsearch/data
     networks:
-      - my-net  
+      - my-net
 
-  db:
+  db_micro:
     image: mysql:5.7
     restart: always
-    container_name: mydb
+    container_name: mydb_micro
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'dbuser'
-      MYSQL_PASSWORD: 'Aa123456'
-      MYSQL_ROOT_PASSWORD: 'Aa123456!'
+      MYSQL_DATABASE: "db"
+      MYSQL_USER: "dbuser"
+      MYSQL_PASSWORD: "Aa123456"
+      MYSQL_ROOT_PASSWORD: "Aa123456!"
     ports:
-      - '3306:3306'
+      - "3306:3306"
     expose:
-      - '3306'
+      - "3306"
     volumes:
       - "./sql-scripts:/docker-entrypoint-initdb.d"
     networks:
-      - my-net    
+      - my-net
 
-  web:
-    image: webapp
+  web_micro:
+    image: webapp_micro
     command: python3 app.py
     depends_on:
-      - es
+      - es_micro
     ports:
       - 5000:5000
     volumes:
       - ./flask-app:/opt/flask-app
     networks:
-      - my-net   
-  
+      - my-net
+
+  order_micro:
+    image: order-service
+    command: python3 order-service.py
+    container_name: order
+    ports:
+      - 9998:9998
+    volumes:
+      - ./order-service:/opt/order-service
+    networks:
+      - my-net
+
+  search_micro:
+    image: search-service
+    command: python3 search-service.py
+    container_name: search
+    depends_on:
+      - es_micro
+    ports:
+      - 9999:9999
+    volumes:
+      - ./search-service:/opt/search-service
+    networks:
+      - my-net
 
 volumes:
   esdata1:
@@ -50,9 +73,6 @@ volumes:
 networks:
   my-net:
     driver: bridge
-
-
-
 #     version: '2.2'
 # services:
 #   es01:
