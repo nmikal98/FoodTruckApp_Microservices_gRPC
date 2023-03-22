@@ -15,6 +15,10 @@ import search_pb2
 import search_pb2_grpc
 import grpc
 
+
+import serve_pb2
+import serve_pb2_grpc
+
 #es = Elasticsearch(host='es')
 
 app = Flask(__name__)
@@ -24,8 +28,8 @@ CORS(app)
 app.secret_key = 'SBKx2OPukLUp3xZ0kF2og3hcGv2Jyuth'
 
 # Enter your database connection details below
-app.config['MYSQL_HOST'] = 'mydb_micro'
-#app.config['MYSQL_HOST'] = 'host.docker.internal'
+#app.config['MYSQL_HOST'] = 'mydb_micro'
+app.config['MYSQL_HOST'] = 'host.docker.internal'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'Aa123456!'
 app.config['MYSQL_DB'] = 'foodtruckdb'
@@ -78,13 +82,10 @@ def login():
     msg = ''
 
     # Check if "username" and "password" POST requests exist (user submitted form)
-    if request.method == 'POST': 
-
-        if 'username' in request.form and 'password' in request.form:
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         # Create variables for easy access
-            username = request.form['username']
-            password = request.form['password'].encode('utf-8')
-
+        username = request.form['username']
+        password = request.form['password'].encode('utf-8')
 
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
@@ -92,6 +93,8 @@ def login():
             'SELECT * FROM accounts WHERE username = %s ', (username,))
         # Fetch one record and return result
         account = cursor.fetchone()
+
+        print(account)
 
         # If account exists in accounts table in our database
         if account:
@@ -104,11 +107,12 @@ def login():
                 session['username'] = account['username']
                 # Redirect to home page
 
-                
-                return redirect(url_for('home'))
-               
-
-                    
+                if account['usersRole'] == 'user':
+                    return redirect(url_for('home'))
+                elif account['usersRole'] == 'worker':
+                    return redirect(url_for('workerHome'))
+                else:
+                    return render_template('login.html', msg='')
             else:
                 # Incorrect password
                 msg = 'Incorrect password!'
@@ -117,7 +121,6 @@ def login():
             msg = 'Incorrect username!'
 
     return render_template('login.html', msg='')
-
 
 @app.route('/logout')
 def logout():
@@ -180,6 +183,22 @@ def home():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
+
+@app.route('/workerHome')
+def workerHome():
+    # Check if user is loggedin
+    if 'loggedin' in session:
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM orders WHERE isCompleted = 0')
+
+        data = cursor.fetchall()
+
+        print(data)
+
+     
+        return render_template('worker-home.html', data=data)
+    # User is not loggedin redirect to login page
+    return redirect(url_for('login'))
 
 @app.route('/profile')
 def profile():
@@ -248,6 +267,43 @@ def placeOrder():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
+@app.route('/completeOrder', methods=['POST'])
+def completeOrder():
+
+    if 'loggedin' in session:
+
+        try:
+            if request.method == 'POST':
+
+                id = request.args.get('orderId')
+
+                if not id:
+                    id = request.form['orderId']
+
+
+                with grpc.insecure_channel("172.17.0.1:9997") as channel:
+                    stub = serve_pb2_grpc.serveServiceStub(channel)
+                    response = stub.serve(serve_pb2.serveRequest(order=id))
+                
+
+                if response.status == "success":
+                    return redirect(url_for('workerHome'))
+
+                
+        except grpc.RpcError as e:
+            print(f"Error making gRPC call: {e.code()} - {e.details()}")
+            if e.code() == grpc.StatusCode.INTERNAL:
+                print(f"Server error details: {e.debug_error_string()}")
+
+            return jsonify({"error": "An error occurred while completing the order"}), 500
+
+        except Exception as e:
+            print(str(e))
+            return jsonify({"error": "An error occurred while completing the order"}), 500
+
+        
+ # User is not loggedin redirect to login page
+    return redirect(url_for('login'))
 
 @app.route('/cancel')
 def cancel():

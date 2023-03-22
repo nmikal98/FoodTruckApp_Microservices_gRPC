@@ -1,9 +1,9 @@
-{% extends 'layout.html' %}
+{% extends 'worker-layout.html' %}
 
-{% block title %}My Orders{% endblock %}
+{% block title %}Orders{% endblock %}
 
 {% block content %}
-<h2>My Orders</h2>
+<h2>Orders</h2>
 
 
 {% for elem in data|reverse %}
@@ -63,6 +63,22 @@
                 {% endfor %}
 
             </table>
+
+
+            <form action="{{ url_for('completeOrder') }}" method="post" autocomplete="off">
+
+                <input type="hidden" name="orderId" value="{{ elem.id }}">
+
+
+
+
+
+                <div class="rowButtons">
+
+                    <input type="submit" class='btnPrimary' value="Complete Order">
+                </div>
+
+            </form>
         </div>
 
     </div>

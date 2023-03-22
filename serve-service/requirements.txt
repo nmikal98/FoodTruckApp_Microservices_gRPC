@@ -1,0 +1,6 @@
+grpcio-tools
+grpcio==1.48.2
+mysql-connector-python
+mysqlclient==2.1.1
+protobuf==4.21.0
+

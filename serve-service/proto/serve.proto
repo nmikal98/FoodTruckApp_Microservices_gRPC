@@ -1,0 +1,20 @@
+//python -m grpc_tools.protoc -I./proto --python_out=. --grpc_python_out=. ./proto/serve.proto
+
+syntax = "proto3";
+
+
+
+service serveService {
+
+    rpc serve (serveRequest) returns (serveResponse) {}
+
+}
+
+message serveRequest {
+    string order = 1;
+}
+
+message serveResponse {
+    string status = 4;
+
+}

@@ -8,6 +8,8 @@ from elasticsearch import Elasticsearch, exceptions
 import time
 import requests
 
+import json
+
 
 
 #es = Elasticsearch("http://localhost:9200")
@@ -22,9 +24,16 @@ es = Elasticsearch(host='es_micro')
 
 def load_data_in_es():
     """ creates an index in elasticsearch """
-    url = "http://data.sfgov.org/resource/rqzj-sfat.json"
-    r = requests.get(url)
-    data = r.json()
+   # url = "http://data.sfgov.org/resource/rqzj-sfat.json"
+   # r = requests.get(url)
+   # data = r.json()
+
+    with open('./data.json', 'r') as f:
+        json_data = f.read()
+
+# Parse the JSON data into a Python object
+    data = json.loads(json_data)
+
     print("Loading data in elasticsearch ...")
     for id, truck in enumerate(data):
         res = es.index(index="sfdata", id=id, body=truck)

@@ -17,7 +17,7 @@ class Listener(order_pb2_grpc.orderServiceServicer):
 
             cursor = conn.cursor()
 
-            cursor.execute('INSERT INTO orders VALUES (NULL, %s, %s, %s,%s, %s)', (request.sessId, request.truckname, request.location, request.orderDetails, request.date))
+            cursor.execute('INSERT INTO orders VALUES (NULL, %s, %s, %s,%s, %s, %s)', (request.sessId, request.truckname, request.location, request.orderDetails, request.date, 0))
             
             conn.commit()
             cursor.close()
@@ -32,47 +32,6 @@ class Listener(order_pb2_grpc.orderServiceServicer):
     
 
 
-     
-        try:
-            res = es.search(
-                index="sfdata",
-                body={
-                    "query": {"match_phrase": {"applicant": request.req}},
-                    "size": 750  # max document size
-                })
-        except Exception as e:
-            print("Server made a boo boo")
-
-        # filtering results
-        vendors = set([x["_source"]["applicant"] for x in res["hits"]["hits"]])
-        temp = {v: [] for v in vendors}
-        fooditems = {v: "" for v in vendors}
-        for r in res["hits"]["hits"]:
-            applicant = r["_source"]["applicant"]
-            if "location" in r["_source"]:
-                truck = {
-                    "hours": r["_source"].get("dayshours", "NA"),
-                    "schedule": r["_source"].get("schedule", "NA"),
-                    "address": r["_source"].get("address", "NA"),
-                    "location": r["_source"]["location"]
-                }
-                fooditems[applicant] = r["_source"]["fooditems"]
-                temp[applicant].append(truck)
-
-        # building up results
-        results = []
-        for v in temp:
-            results.append({
-                "name": v,
-                "fooditems": format_fooditems(fooditems[v]),
-                "branches": temp[v],
-                "drinks": fooditems[v].find("COLD TRUCK") > -1
-            })
-        hits = len(results)
-        locations = sum([len(r["branches"]) for r in results])
-
-
-        return order_pb2.searchStoreResponse(trucks = results)
 
 
 

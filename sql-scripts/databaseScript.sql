@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS accounts (
   	email varchar(100) NOT NULL,
 	phoneNumber varchar(50) NOT NULL,
 	deliveryAddress varchar(200) NOT NULL,
+	usersRole varchar(50) DEFAULT NULL,
     PRIMARY KEY (id),
 	CONSTRAINT u_person UNIQUE (username)
 ) DEFAULT CHARSET=utf8;
@@ -26,14 +27,17 @@ CREATE TABLE IF NOT EXISTS orders (
   	locations varchar(100) NOT NULL,
 	orderDetails LONGTEXT NOT NULL,
 	dateofinsert datetime NOT NULL,
+	isCompleted tinyint(1) DEFAULT 0,
     PRIMARY KEY (id),
 	FOREIGN KEY (userid) REFERENCES accounts(id)
 
 ) DEFAULT CHARSET=utf8;
 
+
 LOCK TABLES `accounts` WRITE;
 INSERT INTO `accounts` VALUES 
-(1, 'user', '$2b$12$YrFlS6/VJ3Unojf/hnBi1eKQk1jr1VpzE2/ak016.wl3JdUAfq9zS', 'mail@email.com', '99000000', 'address' );
+(1, 'user', '$2b$12$YrFlS6/VJ3Unojf/hnBi1eKQk1jr1VpzE2/ak016.wl3JdUAfq9zS', 'mail@email.com', '99000000', 'address', 'user' ),
+(2, 'worker', '$2b$12$YrFlS6/VJ3Unojf/hnBi1eKQk1jr1VpzE2/ak016.wl3JdUAfq9zS', 'mail@email.com', '99000000', 'address', 'worker' );
 UNLOCK TABLES;
 
 
